@@ -1,3 +1,5 @@
+#' Multiplier Function
+#'
 #' Multiplying two numerical values or vectors
 #'
 #' @param x a numerical value or vector

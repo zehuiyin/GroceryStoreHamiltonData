@@ -2,7 +2,7 @@
 % Please edit documentation in R/multiplier.R
 \name{multiplier}
 \alias{multiplier}
-\title{Multiplying two numerical values or vectors}
+\title{Multiplier Function}
 \usage{
 multiplier(x, y)
 }

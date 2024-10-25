@@ -1,0 +1,2 @@
+feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date,feed_version
+"HSR","http://www.busweb.hamilton.ca:8008/","en","20240623","20241228","2024 Summer & 2024 Fall Merged"
