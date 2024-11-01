@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-11-01T15:19Z
+last_built: 2024-11-01T15:57Z
 urls:
   reference: https://zehuiyin.github.io/geog712package/reference
   article: https://zehuiyin.github.io/geog712package/articles
