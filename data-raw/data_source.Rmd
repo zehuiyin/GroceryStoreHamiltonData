@@ -1,0 +1,33 @@
+---
+title: "Data Source Preparation"
+---
+
+# Code to prepare `data_source` dataset goes here
+
+Read in the csv file: `data_source.csv` in the `data-raw` folder. It contains the information about where I got all the raw data in the repository.
+
+```{r}
+data_source <- read.csv("./data_source.csv")
+```
+
+```{r}
+summary(data_source)
+```
+
+It contains three columns, data name, source (URL), and accessed date.
+
+Convert date column to a date object in R.
+
+```{r}
+data_source$Accessed.Date <- as.Date(data_source$Accessed.Date)
+```
+
+```{r}
+colnames(data_source) <- c("Name", "URL", "Date")
+```
+
+Save it to the data folder as `data_source.rda`.
+
+```{r}
+usethis::use_data(data_source, overwrite = TRUE)
+```

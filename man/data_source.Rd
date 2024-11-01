@@ -4,11 +4,20 @@
 \name{data_source}
 \alias{data_source}
 \title{Data Source Information}
+\format{
+A dataframe with 3 columns:
+\describe{
+  \item{Name}{Data Name}
+  \item{URL}{Source (URL)}
+  \item{Date}{Accessed Date}
+}
+}
 \description{
 This is a dataframe containing the information about all the raw data in this package
 }
 \examples{
 data(data_source)
 summary(data_source)
+head(data_source)
 }
 \keyword{datasets}
