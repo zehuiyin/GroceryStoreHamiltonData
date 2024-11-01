@@ -21,15 +21,15 @@ NULL
 
 #' Grocery Stores in Census Tracts in Hamilton
 #'
-#' This is a sf dataframe containing the information about the number of grocery
+#' This is a \emph{sf} dataframe containing the information about the number of grocery
 #' stores in each Census Tract in Hamilton
 #'
-#' @format A dataframe with 4 columns:
+#' @format A \emph{sf} dataframe with 4 columns:
 #' \describe{
 #'   \item{GEOUID}{The unique ID for the geographical unit}
 #'   \item{POP21}{The population count in the census tract from 2021 Canadian Census}
 #'   \item{Grocery}{The number of grocery stores in that census tract}
-#'   \item{geometry}{Geometry column for sf dataframe}
+#'   \item{geometry}{Geometry column for \emph{sf} dataframe}
 #' }
 #'
 #' @name grocery_CT

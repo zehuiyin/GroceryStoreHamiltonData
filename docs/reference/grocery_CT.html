@@ -20,6 +20,7 @@ stores in each Census Tract in Hamilton"></head><body>
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/zehuiyin/geog712package/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -29,19 +30,19 @@ stores in each Census Tract in Hamilton"></head><body>
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Grocery Stores in Census Tracts in Hamilton</h1>
-
+      <small class="dont-index">Source: <a href="https://github.com/zehuiyin/geog712package/blob/HEAD/R/data.R" class="external-link"><code>R/data.R</code></a></small>
       <div class="d-none name"><code>grocery_CT.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
-    <p>This is a sf dataframe containing the information about the number of grocery
+    <p>This is a <em>sf</em> dataframe containing the information about the number of grocery
 stores in each Census Tract in Hamilton</p>
     </div>
 
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A dataframe with 4 columns:</p><dl><dt>GEOUID</dt>
+    <p>A <em>sf</em> dataframe with 4 columns:</p><dl><dt>GEOUID</dt>
 <dd><p>The unique ID for the geographical unit</p></dd>
 
   <dt>POP21</dt>
@@ -51,7 +52,7 @@ stores in each Census Tract in Hamilton</p>
 <dd><p>The number of grocery stores in that census tract</p></dd>
 
   <dt>geometry</dt>
-<dd><p>Geometry column for sf dataframe</p></dd>
+<dd><p>Geometry column for <em>sf</em> dataframe</p></dd>
 
 
 </dl></div>
