@@ -1,0 +1,61 @@
+---
+title: "Grocery Stores in Census Tracts Preparation"
+---
+
+# Code to prepare `grovery_CT` dataset goes here
+
+```{r}
+library(sf)
+```
+
+Read in two geojson files: `hamilton_CT.geojson` and `grocery.geojsonn` in the `data-raw` folder. They contains the census tracts in Hamilton and grocery stores in and near Hamilton, respectively.
+
+```{r}
+ct <- st_read("./hamilton_CT.geojson")
+grocery <- st_read("./grocery.geojson")
+```
+
+Convert grocery store polygons into points.
+
+```{r}
+grocery <- st_centroid(grocery)
+```
+
+Intersect the census tract with the grocery stores.
+
+```{r}
+inter <- st_intersection(ct, grocery)
+```
+
+Count the number of grocery stores in each census tract in Hamilton.
+
+```{r}
+count <- table(inter$GeoUID) |> as.data.frame()
+```
+
+Join it to the census tract raw data.
+
+```{r}
+grocery_CT_raw <- merge(x = ct, y = count,
+                        by.x = "GeoUID",
+                        by.y = "Var1",
+                        all.x = T)
+```
+
+```{r}
+grocery_CT <- grocery_CT_raw[, c("GeoUID", 
+                                 "v_CA21_1..Population..2021", 
+                                 "Freq")]
+
+grocery_CT$Freq[is.na(grocery_CT$Freq)] <- 0
+```
+
+```{r}
+colnames(grocery_CT) <- c("GEOUID", "POP21", "Grocery", "geometry")
+```
+
+Save it to the data folder as `grocery_CT.rda`.
+
+```{r}
+usethis::use_data(grocery_CT, overwrite = TRUE)
+```

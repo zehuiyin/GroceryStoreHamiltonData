@@ -7,13 +7,14 @@
 \format{
 A dataframe with 3 columns:
 \describe{
-  \item{Name}{Data Name}
-  \item{URL}{Source (URL)}
-  \item{Date}{Accessed Date}
+  \item{Name}{Data Name: the name of the dataset.}
+  \item{URL}{Source (URL): the link where the data is downloaded.}
+  \item{Date}{Accessed Date: the date when the data is downloaded.}
 }
 }
 \description{
-This is a dataframe containing the information about all the raw data in this package
+This is a dataframe containing the information about all the raw data in
+this package
 }
 \examples{
 data(data_source)
