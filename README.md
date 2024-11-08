@@ -45,4 +45,11 @@ Load and plot `grocery_CT` vector data. The data contains the geometry
 of all the census tracts in Hamilton and have a variable showing the
 count of grocery stores in that census tract.
 
+``` r
+data("grocery_CT")
+hist(grocery_CT$Grocery,
+     main = "Grocery Store Count of Census Tracts in Hamilton",
+     xlab = "Grocery Store Count")
+```
+
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
