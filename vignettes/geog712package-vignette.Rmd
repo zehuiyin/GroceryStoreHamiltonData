@@ -29,6 +29,17 @@ Load and plot `grocery_CT` vector data. The data contains the geometry of all th
 
 ```{r}
 data("grocery_CT")
-plot(grocery_CT[ ,"POP21"])
-plot(grocery_CT[ ,"Grocery"])
+plot(grocery_CT[ ,"POP21"],
+     main = "2021 Population Count")
+plot(grocery_CT[ ,"Grocery"],
+     main = "Grocery Store Count")
 ```
+
+## A simple OLS Multiple regression of these two variables
+
+```{r}
+lm1 <- lm(Grocery ~ POP21, data = grocery_CT)
+summary(lm1)
+```
+
+Based on this simple regression (p-value=0.66>0.05), population count is not helpful when predicting the count of grocery stores in Hamilton.

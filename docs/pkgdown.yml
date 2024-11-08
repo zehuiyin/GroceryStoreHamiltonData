@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   geog712package-vignette: geog712package-vignette.html
-last_built: 2024-11-08T16:25Z
+last_built: 2024-11-08T16:38Z
 urls:
   reference: https://zehuiyin.github.io/geog712package/reference
   article: https://zehuiyin.github.io/geog712package/articles
