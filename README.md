@@ -34,20 +34,15 @@ This is a basic example which shows you how to solve a common problem:
 library(geog712package)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+A simple multiplier function multiple two values.
 
 ``` r
 multiplier(2, 3)
 #> [1] 6
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+Load and plot `grocery_CT` vector data. The data contains the geometry
+of all the census tracts in Hamilton and have a variable showing the
+count of grocery stores in that census tract.
 
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />

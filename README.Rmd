@@ -40,20 +40,15 @@ This is a basic example which shows you how to solve a common problem:
 library(geog712package)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+A simple multiplier function multiple two values.
 
 ```{r cars}
 multiplier(2, 3)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+Load and plot `grocery_CT` vector data. The data contains the geometry of all the census tracts in Hamilton and have a variable showing the count of grocery stores in that census tract.
 
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-set.seed(437)
-v <- rnorm(100)
-plot(multiplier(v, 3), multiplier(v, -1) + rnorm(100))
+```{r, echo = FALSE}
+data("grocery_CT")
+hist(grocery_CT$Grocery)
 ```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

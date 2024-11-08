@@ -19,3 +19,9 @@ Depends:
     R (>= 2.10)
 URL: https://github.com/zehuiyin/geog712package, https://zehuiyin.github.io/geog712package/
 BugReports: https://github.com/zehuiyin/geog712package/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Imports: 
+    sf

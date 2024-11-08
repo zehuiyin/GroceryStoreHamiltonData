@@ -1,0 +1,34 @@
+---
+title: "geog712package-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{geog712package-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Load packages
+
+*sf* package is used to handle vector spatial data.
+
+```{r setup}
+library(geog712package)
+library(sf)
+```
+
+# `grocery_CT` data
+
+Load and plot `grocery_CT` vector data. The data contains the geometry of all the census tracts in Hamilton and have two variables showing the population count in 2021 and the grocery store counts in that census tract.
+
+```{r}
+data("grocery_CT")
+plot(grocery_CT[ ,"POP21"])
+plot(grocery_CT[ ,"Grocery"])
+```
