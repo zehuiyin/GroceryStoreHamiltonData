@@ -35,6 +35,7 @@ NULL
 #' @name grocery_CT
 #' @docType data
 #' @keywords datasets
+#' @import sf
 #' @examples
 #' data(grocery_CT)
 #' summary(grocery_CT[,c("GEOUID", "POP21", "Grocery")])
