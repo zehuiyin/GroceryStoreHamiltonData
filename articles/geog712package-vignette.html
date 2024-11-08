@@ -83,11 +83,41 @@ showing the population count in 2021 and the grocery store counts in
 that census tract.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"grocery_CT"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">grocery_CT</span><span class="op">[</span> ,<span class="st">"POP21"</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">grocery_CT</span><span class="op">[</span> ,<span class="st">"POP21"</span><span class="op">]</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"2021 Population Count"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="geog712package-vignette_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">grocery_CT</span><span class="op">[</span> ,<span class="st">"Grocery"</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">grocery_CT</span><span class="op">[</span> ,<span class="st">"Grocery"</span><span class="op">]</span>,</span>
+<span>     main <span class="op">=</span> <span class="st">"Grocery Store Count"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="geog712package-vignette_files/figure-html/unnamed-chunk-2-2.png" width="700"></p>
+<div class="section level3">
+<h3 id="a-simple-ols-multiple-regression-of-these-two-variables">A simple OLS Multiple regression of these two variables<a class="anchor" aria-label="anchor" href="#a-simple-ols-multiple-regression-of-these-two-variables"></a>
+</h3>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">lm1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Grocery</span> <span class="op">~</span> <span class="va">POP21</span>, data <span class="op">=</span> <span class="va">grocery_CT</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">lm1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; lm(formula = Grocery ~ POP21, data = grocery_CT)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residuals:</span></span>
+<span><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
+<span><span class="co">#&gt; -0.6646 -0.5989 -0.5654  0.4079  3.4094 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
+<span><span class="co">#&gt; (Intercept)  6.657e-01  1.949e-01   3.415 0.000824 ***</span></span>
+<span><span class="co">#&gt; POP21       -2.082e-05  4.736e-05  -0.440 0.660843    </span></span>
+<span><span class="co">#&gt; ---</span></span>
+<span><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Residual standard error: 0.9235 on 148 degrees of freedom</span></span>
+<span><span class="co">#&gt; Multiple R-squared:  0.001304,   Adjusted R-squared:  -0.005444 </span></span>
+<span><span class="co">#&gt; F-statistic: 0.1933 on 1 and 148 DF,  p-value: 0.6608</span></span></code></pre></div>
+<p>Based on this simple regression (p-value=0.66&gt;0.05), population
+count is not helpful when predicting the count of grocery stores in
+Hamilton.</p>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
