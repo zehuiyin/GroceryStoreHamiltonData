@@ -29,16 +29,16 @@ Load and plot the `grocery_CT` vector data. This dataset contains the geometry o
 
 ```{r}
 data("grocery_CT")
-plot(grocery_CT[ ,"POP21"],
+plot(grocery_CT[ ,"v_CA21_1..Population..2021"],
      main = "2021 Population Count")
-plot(grocery_CT[ ,"Grocery"],
+plot(grocery_CT[ ,"Freq"],
      main = "Grocery Store Count")
 ```
 
 ## An OLS simple linear regression of these two variables
 
 ```{r}
-lm1 <- lm(Grocery ~ POP21, data = grocery_CT)
+lm1 <- lm(Freq ~ v_CA21_1..Population..2021, data = grocery_CT)
 summary(lm1)
 ```
 

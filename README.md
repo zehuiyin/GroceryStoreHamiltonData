@@ -47,7 +47,7 @@ that shows the count of grocery stores in each census tract.
 
 ``` r
 data("grocery_CT")
-hist(grocery_CT$Grocery,
+hist(grocery_CT$Freq,
      main = "Grocery Store Count of Census Tracts in Hamilton",
      xlab = "Grocery Store Count")
 ```

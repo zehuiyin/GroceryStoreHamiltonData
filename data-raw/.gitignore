@@ -1,0 +1,5 @@
+# hide API key
+.Renviron
+
+# remove census mapper intermediate data
+/census_data/

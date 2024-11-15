@@ -50,7 +50,7 @@ Load and plot the `grocery_CT` vector data. This dataset includes the geometry o
 
 ```{r}
 data("grocery_CT")
-hist(grocery_CT$Grocery,
+hist(grocery_CT$Freq,
      main = "Grocery Store Count of Census Tracts in Hamilton",
      xlab = "Grocery Store Count")
 ```

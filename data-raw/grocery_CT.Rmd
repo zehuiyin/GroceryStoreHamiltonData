@@ -6,6 +6,7 @@ title: "Grocery Stores in Census Tracts Preparation"
 
 ```{r}
 library(sf)
+library(dplyr)
 ```
 
 Read in two geojson files: `hamilton_CT.geojson` and `grocery.geojsonn` in the `data-raw` folder. They contains the census tracts in Hamilton and grocery stores in and near Hamilton, respectively.
@@ -43,15 +44,11 @@ grocery_CT_raw <- merge(x = ct, y = count,
 ```
 
 ```{r}
-grocery_CT <- grocery_CT_raw[, c("GeoUID", 
-                                 "v_CA21_1..Population..2021", 
-                                 "Freq")]
+grocery_CT <- grocery_CT_raw |> select("GeoUID", 
+                                       starts_with("v_CA21"), 
+                                       "Freq")
 
 grocery_CT$Freq[is.na(grocery_CT$Freq)] <- 0
-```
-
-```{r}
-colnames(grocery_CT) <- c("GEOUID", "POP21", "Grocery", "geometry")
 ```
 
 Save it to the data folder as `grocery_CT.rda`.
