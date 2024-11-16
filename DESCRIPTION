@@ -1,7 +1,7 @@
 Package: geog712package
 Type: Package
 Title: GEOG 712 Package
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person(given = "Zehui",
            family = "Yin",

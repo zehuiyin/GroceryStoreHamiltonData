@@ -1,0 +1,69 @@
+---
+title: "can_census_2021"
+author: "Zehui Yin"
+format: html
+---
+
+```{r}
+library(sf)
+library(cancensus)
+library(readr)
+library(geojsonsf)
+readRenviron(".Renviron")
+```
+
+Download 2021 Canadian Census data for Hamilton.
+
+```{r}
+options(cancensus.api_key = Sys.getenv("API_key"))
+options(cancensus.cache_path = "./census_data")
+
+# Returns data and geography as an sf-class data frame
+census_data <- get_census(
+  # 2021 census
+  dataset = "CA21", 
+  # CSD Hamilton
+  regions = list(CSD="3525005"), 
+  vectors = c(
+    # population count
+    "v_CA21_1",
+    # Land area in square kilometres
+    "v_CA21_7",
+    # Total - Age (Total)
+    "v_CA21_8",
+    # 65 years and over (Total)
+    "v_CA21_251",
+    # 0 to 14 years (Total), 15 to 19 years (Total), 20 to 24 years (Total)
+    "v_CA21_11","v_CA21_71","v_CA21_89",
+    # Total - Age (Female)
+    "v_CA21_10",
+    # Single-detached house, Occupied private dwellings by structural type of dwelling data
+    "v_CA21_435","v_CA21_434",
+    # Marital status for the total population aged 15 years and over (Total)
+    # Married or living common-law (Total)
+    "v_CA21_453","v_CA21_456",
+    # Gini index on adjusted household after-tax income
+    "v_CA21_1142",
+    # total income groups in 2020 for the population aged 15 and over
+    "v_CA21_671","v_CA21_674","v_CA21_677","v_CA21_680","v_CA21_683",
+    "v_CA21_686","v_CA21_689","v_CA21_692","v_CA21_695","v_CA21_698",
+    "v_CA21_701","v_CA21_707","v_CA21_710",
+    # knowledge of official language
+    # Neither English nor French (Total)
+    # Knowledge of official languages for the total population excluding institutional residents (Total)
+    "v_CA21_1156","v_CA21_1144",
+    # Non-official language (Total)
+    # All languages spoken at home for the total population excluding institutional residents (Total)
+    "v_CA21_2176","v_CA21_2167"
+    ), 
+  labels = "detailed", 
+  geo_format = "sf",
+  # at Census DA level
+  level = "DA")
+```
+
+Save the output in a `geojson` file.
+
+```{r}
+st_write(census_data, "./hamilton_DA.geojson")
+```

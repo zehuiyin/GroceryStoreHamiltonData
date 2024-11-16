@@ -23,23 +23,23 @@ library(geog712package)
 library(sf)
 ```
 
-# `grocery_CT` data
+# `grocery_DA` data
 
-Load and plot the `grocery_CT` vector data. This dataset contains the geometry of all the census tracts in Hamilton and includes two variables: the population count in 2021 and the grocery store counts in each census tract.
+Load and plot the `grocery_DA` vector data. This dataset contains the geometry of all the census tracts in Hamilton and includes two variables: the population count in 2021 and the grocery store counts in each census tract.
 
 ```{r}
-data("grocery_CT")
-plot(grocery_CT[ ,"v_CA21_1..Population..2021"],
+data("grocery_DA")
+plot(grocery_DA[ ,"v_CA21_1..Population..2021"],
      main = "2021 Population Count")
-plot(grocery_CT[ ,"Freq"],
+plot(grocery_DA[ ,"Freq"],
      main = "Grocery Store Count")
 ```
 
 ## An OLS simple linear regression of these two variables
 
 ```{r}
-lm1 <- lm(Freq ~ v_CA21_1..Population..2021, data = grocery_CT)
+lm1 <- lm(Freq ~ v_CA21_1..Population..2021, data = grocery_DA)
 summary(lm1)
 ```
 
-Based on this simple regression (p-value = 0.66 > 0.05), the population count is not a significant predictor of the grocery store count in Hamilton.
+Based on this simple regression (p-value = 0.06 > 0.05), the population count is not a significant predictor of the grocery store count in Hamilton.

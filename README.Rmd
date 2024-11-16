@@ -49,8 +49,8 @@ multiplier(2, 3)
 Load and plot the `grocery_CT` vector data. This dataset includes the geometry of all the census tracts in Hamilton and contains a variable that shows the count of grocery stores in each census tract.
 
 ```{r}
-data("grocery_CT")
-hist(grocery_CT$Freq,
-     main = "Grocery Store Count of Census Tracts in Hamilton",
+data("grocery_DA")
+hist(grocery_DA$Freq,
+     main = "Grocery Store Count of Census Dissemination Area in Hamilton",
      xlab = "Grocery Store Count")
 ```

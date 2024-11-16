@@ -19,16 +19,15 @@
 #' head(data_source)
 NULL
 
-#' Grocery Stores in Census Tracts in Hamilton
+#' Grocery Stores in Census Dissemination Area in Hamilton
 #'
 #' This is a \emph{sf} dataframe containing the information about the number of grocery
-#' stores in and census information about each Census Tract in Hamilton
+#' stores in and census information about each Census dissemination area in Hamilton
 #'
-#' @format A \emph{sf} dataframe with 34 columns:
+#' @format A \emph{sf} dataframe with 33 columns:
 #' \describe{
 #'   \item{GeoUID}{The unique ID for the geographical unit}
-#'   \item{v_CA21_1}{The population count in the census tract from 2021 Canadian Census}
-#'   \item{v_CA21_3}{Population percentage change from 2016 to 2021}
+#'   \item{v_CA21_1}{The population count in the census dissemination area from 2021 Canadian Census}
 #'   \item{v_CA21_7}{Land area in square kilometres}
 #'   \item{v_CA21_8}{Total number of population in the census track with a valid age value}
 #'   \item{v_CA21_11}{Total number of population between 0 to 14 years old}
@@ -58,16 +57,16 @@ NULL
 #'   \item{v_CA21_1156}{Total number of population with no knowledge of neither English or French}
 #'   \item{v_CA21_2176}{Total number of population whose language spoken at home is non-official language}
 #'   \item{v_CA21_2167}{Total number of population with a valid value in all languages spoken at home excluding institutional residents}
-#'   \item{Freq}{The number of grocery stores in that census tract}
+#'   \item{Freq}{The number of grocery stores in that census dissemination area}
 #'   \item{geometry}{Geometry column for \emph{sf} dataframe}
 #' }
 #'
-#' @name grocery_CT
+#' @name grocery_DA
 #' @docType data
 #' @keywords datasets
 #' @import sf
 #' @examples
-#' data(grocery_CT)
-#' summary(grocery_CT[,c("GeoUID", "Freq")])
-#' head(grocery_CT[,c("GeoUID", "Freq")])
+#' data(grocery_DA)
+#' summary(grocery_DA[,c("GeoUID", "Freq")])
+#' head(grocery_DA[,c("GeoUID", "Freq")])
 NULL
