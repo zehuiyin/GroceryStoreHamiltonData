@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">geog712package</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,47 +74,47 @@
 <span><span class="co">#&gt; Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.3.1; sf_use_s2() is TRUE</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="grocery_ct-data">
-<code>grocery_CT</code> data<a class="anchor" aria-label="anchor" href="#grocery_ct-data"></a>
+<h2 id="grocery_da-data">
+<code>grocery_DA</code> data<a class="anchor" aria-label="anchor" href="#grocery_da-data"></a>
 </h2>
-<p>Load and plot the <code>grocery_CT</code> vector data. This dataset
+<p>Load and plot the <code>grocery_DA</code> vector data. This dataset
 contains the geometry of all the census tracts in Hamilton and includes
 two variables: the population count in 2021 and the grocery store counts
 in each census tract.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"grocery_CT"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">grocery_CT</span><span class="op">[</span> ,<span class="st">"v_CA21_1..Population..2021"</span><span class="op">]</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"grocery_DA"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">grocery_DA</span><span class="op">[</span> ,<span class="st">"v_CA21_1..Population..2021"</span><span class="op">]</span>,</span>
 <span>     main <span class="op">=</span> <span class="st">"2021 Population Count"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="geog712package-vignette_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">grocery_CT</span><span class="op">[</span> ,<span class="st">"Freq"</span><span class="op">]</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">grocery_DA</span><span class="op">[</span> ,<span class="st">"Freq"</span><span class="op">]</span>,</span>
 <span>     main <span class="op">=</span> <span class="st">"Grocery Store Count"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="geog712package-vignette_files/figure-html/unnamed-chunk-2-2.png" width="700"></p>
 <div class="section level3">
 <h3 id="an-ols-simple-linear-regression-of-these-two-variables">An OLS simple linear regression of these two variables<a class="anchor" aria-label="anchor" href="#an-ols-simple-linear-regression-of-these-two-variables"></a>
 </h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">lm1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Freq</span> <span class="op">~</span> <span class="va">v_CA21_1..Population..2021</span>, data <span class="op">=</span> <span class="va">grocery_CT</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">lm1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Freq</span> <span class="op">~</span> <span class="va">v_CA21_1..Population..2021</span>, data <span class="op">=</span> <span class="va">grocery_DA</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">lm1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Call:</span></span>
-<span><span class="co">#&gt; lm(formula = Freq ~ v_CA21_1..Population..2021, data = grocery_CT)</span></span>
+<span><span class="co">#&gt; lm(formula = Freq ~ v_CA21_1..Population..2021, data = grocery_DA)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Residuals:</span></span>
 <span><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
-<span><span class="co">#&gt; -0.6646 -0.5989 -0.5654  0.4079  3.4094 </span></span>
+<span><span class="co">#&gt; -0.4473 -0.0986 -0.0917 -0.0872  3.8979 </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Coefficients:</span></span>
-<span><span class="co">#&gt;                              Estimate Std. Error t value Pr(&gt;|t|)    </span></span>
-<span><span class="co">#&gt; (Intercept)                 6.657e-01  1.949e-01   3.415 0.000824 ***</span></span>
-<span><span class="co">#&gt; v_CA21_1..Population..2021 -2.082e-05  4.736e-05  -0.440 0.660843    </span></span>
+<span><span class="co">#&gt;                             Estimate Std. Error t value Pr(&gt;|t|)   </span></span>
+<span><span class="co">#&gt; (Intercept)                6.691e-02  2.135e-02   3.134  0.00178 **</span></span>
+<span><span class="co">#&gt; v_CA21_1..Population..2021 4.985e-05  2.669e-05   1.868  0.06211 . </span></span>
 <span><span class="co">#&gt; ---</span></span>
 <span><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Residual standard error: 0.9235 on 148 degrees of freedom</span></span>
-<span><span class="co">#&gt; Multiple R-squared:  0.001304,   Adjusted R-squared:  -0.005444 </span></span>
-<span><span class="co">#&gt; F-statistic: 0.1933 on 1 and 148 DF,  p-value: 0.6608</span></span></code></pre></div>
-<p>Based on this simple regression (p-value = 0.66 &gt; 0.05), the
+<span><span class="co">#&gt; Residual standard error: 0.3836 on 889 degrees of freedom</span></span>
+<span><span class="co">#&gt; Multiple R-squared:  0.003909,   Adjusted R-squared:  0.002789 </span></span>
+<span><span class="co">#&gt; F-statistic: 3.489 on 1 and 889 DF,  p-value: 0.06211</span></span></code></pre></div>
+<p>Based on this simple regression (p-value = 0.06 &gt; 0.05), the
 population count is not a significant predictor of the grocery store
 count in Hamilton.</p>
 </div>
