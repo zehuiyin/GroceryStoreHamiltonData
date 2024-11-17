@@ -53,3 +53,18 @@ hist(grocery_DA$Freq,
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
+# How to cite
+
+Yin, Z. (2024). geog712package: GEOG 712 R Package Activity.
+<https://github.com/zehuiyin/geog712package>
+
+``` latex
+@Manual{geog712package,
+  title = {geog712package: GEOG 712 R Package Activity},
+  author = {Zehui Yin},
+  year = {2024},
+  note = {R package version 0.1.1},
+  url = {https://github.com/zehuiyin/geog712package}
+}
+```
