@@ -63,7 +63,7 @@ Ontario”. <https://github.com/zehuiyin/GroceryStoreHamiltonData>
   title = {GroceryStoreHamiltonData: Data for the paper "Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario"},
   author = {Zehui Yin},
   year = {2024},
-  note = {R package version 0.2},
+  note = {R package version 1.0},
   url = {https://github.com/zehuiyin/GroceryStoreHamiltonData}
 }
 ```
