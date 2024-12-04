@@ -37,7 +37,7 @@
 #'
 #' @examples
 #' grocery_DA <- prepare_data()
-#' summary(grocery_DA)
+#' summary(grocery_DA[,c("Freq", "PCT_single_detached")])
 prepare_data <- function(){
   # read data
   data("grocery_DA", envir = environment())
@@ -62,6 +62,8 @@ prepare_data <- function(){
   hsr_stops <- st_transform(hsr_stops, crs = 26917)
 
   # compute the number of hsr stops in each DA
+  st_agr(hsr_stops) = "constant"
+  st_agr(grocery_DA) = "constant"
   stops_inter <- st_intersection(hsr_stops, grocery_DA)
 
   stop_count <- stops_inter |> st_drop_geometry() |> group_by(GeoUID) |> count()
@@ -98,6 +100,7 @@ prepare_data <- function(){
   grocery_DA$log_area <- log(grocery_DA$v_CA21_7..Land.area.in.square.kilometres)
 
   # calculate distance to downtown
+  st_agr(grocery_DA) = "constant"
   grocery_DA$dist_to_downtown <- st_distance(st_centroid(grocery_DA),
                                              hamilton_downtown) |> drop_units()
   grocery_DA$log_dist_to_downtown <- log(grocery_DA$dist_to_downtown)

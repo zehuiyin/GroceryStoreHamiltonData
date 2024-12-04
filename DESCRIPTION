@@ -1,7 +1,7 @@
 Package: GroceryStoreHamiltonData
 Type: Package
 Title: Data for the paper "Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario"
-Version: 0.2
+Version: 1.0
 Authors@R: 
     person(given = "Zehui",
            family = "Yin",
@@ -16,19 +16,19 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
 Depends: 
-    R (>= 2.10)
+    R (>= 4.4)
 URL: https://github.com/zehuiyin/GroceryStoreHamiltonData, https://zehuiyin.github.io/GroceryStoreHamiltonData/
 BugReports: https://github.com/zehuiyin/GroceryStoreHamiltonData/issues
 Suggests: 
-    knitr,
-    rmarkdown,
-    testthat (>= 3.0.0)
+    knitr (>= 1.48),
+    rmarkdown (>= 2.28),
+    testthat (>= 3.2.1.1)
 VignetteBuilder: knitr
 Imports: 
-    sf,
-    tidytransit,
-    dplyr,
-    units,
+    sf (>= 1.0-19),
+    tidytransit (>= 1.7.0),
+    dplyr (>= 1.1.4),
+    units (>= 0.8-5),
     stats,
     utils
 Config/testthat/edition: 3

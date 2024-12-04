@@ -37,7 +37,7 @@ arguments but does require internet access.
 }
 \examples{
 grocery_DA <- prepare_data()
-summary(grocery_DA)
+summary(grocery_DA[,c("Freq", "PCT_single_detached")])
 }
 \author{
 Zehui Yin, \email{yinz39@mcmaster.ca}
