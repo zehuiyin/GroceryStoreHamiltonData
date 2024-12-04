@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">GroceryStoreHamiltonData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,26 +75,38 @@
 <p>This is a basic example which shows you how to solve a common problem:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/zehuiyin/GroceryStoreHamiltonData" class="external-link">GroceryStoreHamiltonData</a></span><span class="op">)</span></span></code></pre></div>
-<p>Load and plot the <code>grocery_CT</code> vector data. This dataset includes the geYometry of all the census tracts in Hamilton and contains a variable that shows the count of grocery stores in each census tract.</p>
+<p>Load and plot the <code>grocery_CT</code> vector data. This dataset includes the geometry of all the census tracts in Hamilton and contains a variable that shows the count of grocery stores in each census tract.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"grocery_DA"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html" class="external-link">hist</a></span><span class="op">(</span><span class="va">grocery_DA</span><span class="op">$</span><span class="va">Freq</span>,</span>
 <span>     main <span class="op">=</span> <span class="st">"Grocery Store Count of Census Dissemination Area in Hamilton"</span>,</span>
 <span>     xlab <span class="op">=</span> <span class="st">"Grocery Store Count"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
+<p>Alternatively, we can use the <code><a href="reference/prepare_data.html">prepare_data()</a></code> function to obtain a cleaned dataset, which I utilized in the paper “<a href="https://github.com/zehuiyin/grocery_store_hamilton" class="external-link">Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario</a>.”</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">grocery_DA</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/prepare_data.html">prepare_data</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">grocery_DA</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Freq"</span>, <span class="st">"PCT_single_detached"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt;       Freq         PCT_single_detached          geometry  </span></span>
+<span><span class="co">#&gt;  Min.   :0.00000   Min.   :  0.00      MULTIPOLYGON :891  </span></span>
+<span><span class="co">#&gt;  1st Qu.:0.00000   1st Qu.: 37.86      epsg:26917   :  0  </span></span>
+<span><span class="co">#&gt;  Median :0.00000   Median : 72.44      +proj=utm ...:  0  </span></span>
+<span><span class="co">#&gt;  Mean   :0.09877   Mean   : 63.79                         </span></span>
+<span><span class="co">#&gt;  3rd Qu.:0.00000   3rd Qu.: 93.94                         </span></span>
+<span><span class="co">#&gt;  Max.   :4.00000   Max.   :104.17                         </span></span>
+<span><span class="co">#&gt;                    NA's   :4</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level1">
 <h1 id="how-to-cite">How to cite<a class="anchor" aria-label="anchor" href="#how-to-cite"></a>
 </h1>
 <p>Yin, Z. (2024). GroceryStoreHamiltonData: Data for the paper “Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario”. <a href="https://github.com/zehuiyin/GroceryStoreHamiltonData" class="external-link uri">https://github.com/zehuiyin/GroceryStoreHamiltonData</a></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>@Manual{GroceryStoreHamiltonData,</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  title = {GroceryStoreHamiltonData: Data for the paper "Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario"},</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  author = {Zehui Yin},</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  year = {2024},</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>  note = {R package version 1.0},</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>  url = {https://github.com/zehuiyin/GroceryStoreHamiltonData}</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>@Manual{GroceryStoreHamiltonData,</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  title = {GroceryStoreHamiltonData: Data for the paper "Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario"},</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  author = {Zehui Yin},</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  year = {2024},</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  note = {R package version 1.1},</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>  url = {https://github.com/zehuiyin/GroceryStoreHamiltonData}</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 
   </main><aside class="col-md-3"><div class="links">
