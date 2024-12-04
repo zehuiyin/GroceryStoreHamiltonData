@@ -1,5 +1,5 @@
 ---
-title: "geog712package-vignette"
+title: "GroceryStoreHamiltonData-vignette"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{geog712package-vignette}
@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 The *sf* package is used to handle vector spatial data.
 
 ```{r setup}
-library(geog712package)
+library(GroceryStoreHamiltonData)
 library(sf)
 ```
 

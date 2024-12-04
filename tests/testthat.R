@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(geog712package)
+library(GroceryStoreHamiltonData)
 
-test_check("geog712package")
+test_check("GroceryStoreHamiltonData")

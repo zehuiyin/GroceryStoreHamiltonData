@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# geog712package
+# GroceryStoreHamiltonData
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -13,17 +13,22 @@ R](https://academiccalendars.romcmaster.ca/preview_course.php?catoid=55&coid=274
 taught by [Dr. Antonio Paez](https://experts.mcmaster.ca/display/paezha)
 in Fall 2024.
 
+It includes the data for the paper titled “[Food Deserts or Food Oases?
+Predicting Grocery Store Locations in Hamilton,
+Ontario](https://github.com/zehuiyin/grocery_store_hamilton),” which is
+the final project for the course.
+
 ## Installation
 
-You can install the development version of geog712package from
-[GitHub](https://github.com) with:
+You can install the development version of `GroceryStoreHamiltonData`
+from [GitHub](https://github.com) with:
 
 ``` r
 if(!require(remotes)){
     install.packages("remotes")
     library(remotes)
 }
-remotes::install_github("zehuiyin/geog712package")
+remotes::install_github("zehuiyin/GroceryStoreHamiltonData")
 ```
 
 ## Example
@@ -31,18 +36,11 @@ remotes::install_github("zehuiyin/geog712package")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(geog712package)
-```
-
-A simple multiplier function multiple two values.
-
-``` r
-multiplier(2, 3)
-#> [1] 6
+library(GroceryStoreHamiltonData)
 ```
 
 Load and plot the `grocery_CT` vector data. This dataset includes the
-geometry of all the census tracts in Hamilton and contains a variable
+geYometry of all the census tracts in Hamilton and contains a variable
 that shows the count of grocery stores in each census tract.
 
 ``` r
@@ -56,15 +54,16 @@ hist(grocery_DA$Freq,
 
 # How to cite
 
-Yin, Z. (2024). geog712package: GEOG 712 R Package Activity.
-<https://github.com/zehuiyin/geog712package>
+Yin, Z. (2024). GroceryStoreHamiltonData: Data for the paper “Food
+Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton,
+Ontario”. <https://github.com/zehuiyin/GroceryStoreHamiltonData>
 
 ``` latex
-@Manual{geog712package,
-  title = {geog712package: GEOG 712 R Package Activity},
+@Manual{GroceryStoreHamiltonData,
+  title = {GroceryStoreHamiltonData: Data for the paper "Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario"},
   author = {Zehui Yin},
   year = {2024},
-  note = {R package version 0.1.1},
-  url = {https://github.com/zehuiyin/geog712package}
+  note = {R package version 0.2},
+  url = {https://github.com/zehuiyin/GroceryStoreHamiltonData}
 }
 ```
