@@ -11,7 +11,7 @@ arguments but does require internet access."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">GroceryStoreHamiltonData</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,209 +115,15 @@ arguments but does require internet access.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">grocery_DA</span> <span class="op">&lt;-</span> <span class="fu">prepare_data</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>attribute variables are assumed to be spatially constant throughout all geometries</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>st_centroid assumes attributes are constant over geometries</span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">grocery_DA</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     GeoUID          v_CA21_1..Population..2021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Length:891         Min.   :   0              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Class :character   1st Qu.: 441              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mode  :character   Median : 521              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                     Mean   : 639              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                     3rd Qu.: 664              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                     Max.   :7631              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_7..Land.area.in.square.kilometres v_CA21_8..Total...Age</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   : 0.010                           Min.   :   0.0       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 0.090                           1st Qu.: 440.0       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 0.140                           Median : 520.0       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 1.255                           Mean   : 640.4       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 0.310                           3rd Qu.: 665.0       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :32.170                           Max.   :7630.0       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                           NA's   :2            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_11..0.to.14.years v_CA21_10..Total...Age v_CA21_251..65.years.and.over</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :   0.0           Min.   :   0.0         Min.   :   0.0               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:  60.0           1st Qu.: 220.0         1st Qu.:  70.0               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median :  75.0           Median : 265.0         Median :  90.0               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 102.7           Mean   : 325.8         Mean   : 117.3               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 105.0           3rd Qu.: 335.0         3rd Qu.: 130.0               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :1955.0           Max.   :3900.0         Max.   :1520.0               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :2                NA's   :2              NA's   :2                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_71..15.to.19.years v_CA21_89..20.to.24.years</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :  0.00            Min.   :  0.00           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 20.00            1st Qu.: 25.00           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 25.00            Median : 30.00           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 35.78            Mean   : 40.87           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 40.00            3rd Qu.: 45.00           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :570.00            Max.   :460.00           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :2                 NA's   :2                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_435..Single.detached.house</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :   0.0                   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:  80.0                   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 135.0                   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 140.7                   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 180.0                   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :1270.0                   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :2                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_434..Occupied.private.dwellings.by.structural.type.of.dwelling.data</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :   0.0                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 170.0                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 205.0                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 250.5                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 270.0                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :2205.0                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :2                                                                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_453..Marital.status.for.the.total.population.aged.15.years.and.over</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :   0.0                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 375.0                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 440.0                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 537.7                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 570.0                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :5680.0                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :2                                                                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_456..Married.or.living.common.law</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :   0.0                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 190.0                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 235.0                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 293.2                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 310.0                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :3605.0                          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :2                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_1142..Gini.index.on.adjusted.household.after.tax.income</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :0.1820                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:0.2260                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median :0.2475                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :0.2558                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:0.2770                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :0.9120                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :15                                                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_1144..Knowledge.of.official.languages.for.the.total.population.excluding.institutional.residents</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :   0.0                                                                                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 440.0                                                                                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 515.0                                                                                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 634.2                                                                                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 655.0                                                                                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :7630.0                                                                                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :2                                                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_671..With.total.income v_CA21_674..Under..10.000..including.loss.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   : 155.0                Min.   :  5.00                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 360.0                1st Qu.: 25.00                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 420.0                Median : 35.00                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 512.1                Mean   : 41.74                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 535.0                3rd Qu.: 45.00                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :5360.0                Max.   :545.00                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :15                    NA's   :15                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_677...10.000.to..19.999 v_CA21_680...20.000.to..29.999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   : 10.00                 Min.   : 20.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 40.00                 1st Qu.: 50.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 55.00                 Median : 70.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 63.33                 Mean   : 81.44                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 70.00                 3rd Qu.: 90.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :595.00                 Max.   :725.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :15                     NA's   :15                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_683...30.000.to..39.999 v_CA21_686...40.000.to..49.999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   : 10.00                 Min.   : 10.0                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 45.00                 1st Qu.: 40.0                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 55.00                 Median : 50.0                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 66.32                 Mean   : 57.6                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 75.00                 3rd Qu.: 65.0                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :635.00                 Max.   :530.0                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :15                     NA's   :15                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_689...50.000.to..59.999 v_CA21_692...60.000.to..69.999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :  0.00                 Min.   :  0.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 30.00                 1st Qu.: 25.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 40.00                 Median : 30.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 46.54                 Mean   : 37.14                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 50.00                 3rd Qu.: 40.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :470.00                 Max.   :395.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :15                     NA's   :15                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_695...70.000.to..79.999 v_CA21_698...80.000.to..89.999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :  0.00                 Min.   :  0.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 15.00                 1st Qu.: 10.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 25.00                 Median : 15.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 28.56                 Mean   : 21.38                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 30.00                 3rd Qu.: 25.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :335.00                 Max.   :260.00                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :15                     NA's   :15                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_701...90.000.to..99.999 v_CA21_707...100.000.to..149.999</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :  0.0                  Min.   :  0.00                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 10.0                  1st Qu.: 15.00                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 15.0                  Median : 25.00                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 16.8                  Mean   : 35.88                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 20.0                  3rd Qu.: 45.00                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :235.0                  Max.   :505.00                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :15                     NA's   :15                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_710...150.000.and.over v_CA21_1156..Neither.English.nor.French</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :  0.00                Min.   :  0.00                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:  0.00                1st Qu.:  0.00                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median :  5.00                Median :  5.00                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 14.95                Mean   : 11.57                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 20.00                3rd Qu.: 15.00                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :165.00                Max.   :195.00                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :15                    NA's   :2                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_2176..Non.official.language</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :  0.00                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 10.00                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 25.00                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 40.05                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 50.00                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :810.00                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :2                         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  v_CA21_2167..All.languages.spoken.at.home.for.the.total.population.excluding.institutional.residents</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :   0.0                                                                                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 440.0                                                                                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 515.0                                                                                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 634.2                                                                                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 655.0                                                                                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :7630.0                                                                                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :2                                                                                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       Freq          n_hsr_stops              geometry   n_hsr_stops_density</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :0.00000   Min.   : 0.000   MULTIPOLYGON :891   Min.   :  0.00     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:0.00000   1st Qu.: 0.000   epsg:26917   :  0   1st Qu.:  0.00     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median :0.00000   Median : 2.000   +proj=utm ...:  0   Median : 11.76     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :0.09877   Mean   : 2.585                       Mean   : 15.04     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:0.00000   3rd Qu.: 4.000                       3rd Qu.: 22.22     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :4.00000   Max.   :49.000                       Max.   :200.00     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  hsr_level   pop_density    log_pop_density     log_area     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  low :450   Min.   :    0   Min.   : 0.000   Min.   :-4.605  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  mid :220   1st Qu.: 2068   1st Qu.: 7.635   1st Qu.:-2.408  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  high:221   Median : 3655   Median : 8.204   Median :-1.966  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             Mean   : 4538   Mean   : 7.835   Mean   :-1.515  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             3rd Qu.: 5352   3rd Qu.: 8.585   3rd Qu.:-1.171  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             Max.   :79800   Max.   :11.287   Max.   : 3.471  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  dist_to_downtown.V1 log_dist_to_downtown.V1 PCT_aged_under_24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :  159.377   Min.   : 5.071275       Min.   : 0.00    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 3603.999   1st Qu.: 8.189794       1st Qu.:18.52    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 6012.537   Median : 8.701602       Median :21.43    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 6901.449   Mean   : 8.582862       Mean   :21.34    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 8962.513   3rd Qu.: 9.100806       3rd Qu.:24.28    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :28288.735   Max.   :10.250219       Max.   :46.77    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                              NA's   :3        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  PCT_aged_above_65 PCT_single_detached PCT_married_common_law</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   : 0.00     Min.   :  0.00      Min.   :16.98         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:13.10     1st Qu.: 37.86      1st Qu.:46.74         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median :17.50     Median : 72.44      Median :55.23         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :19.37     Mean   : 63.79      Mean   :54.05         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:23.08     3rd Qu.: 93.94      3rd Qu.:61.73         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :94.67     Max.   :104.17      Max.   :73.68         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :3         NA's   :4           NA's   :3             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  PCT_income_less_40k PCT_income_greater_100k PCT_dont_know_official_language</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :30.43       Min.   : 0.000          Min.   : 0.000                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:43.18       1st Qu.: 3.792          1st Qu.: 0.000                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median :48.69       Median : 7.380          Median : 1.205                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :49.81       Mean   : 9.356          Mean   : 1.693                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:55.28       3rd Qu.:13.711          3rd Qu.: 2.381                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :92.16       Max.   :37.500          Max.   :17.241                 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :15          NA's   :15              NA's   :3                      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  PCT_not_speak_offcial_language_at_home</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   : 0.000                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.: 2.222                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Median : 5.093                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   : 5.775                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.: 8.266                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :29.474                        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  NA's   :3                             </span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">grocery_DA</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Freq"</span>, <span class="st">"PCT_single_detached"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       Freq         PCT_single_detached          geometry  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Min.   :0.00000   Min.   :  0.00      MULTIPOLYGON :891  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1st Qu.:0.00000   1st Qu.: 37.86      epsg:26917   :  0  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Median :0.00000   Median : 72.44      +proj=utm ...:  0  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Mean   :0.09877   Mean   : 63.79                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3rd Qu.:0.00000   3rd Qu.: 93.94                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  Max.   :4.00000   Max.   :104.17                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                    NA's   :4                              </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
