@@ -51,4 +51,7 @@ data(grocery_DA)
 summary(grocery_DA[,c("GeoUID", "Freq")])
 head(grocery_DA[,c("GeoUID", "Freq")])
 }
+\author{
+Zehui Yin, \email{yinz39@mcmaster.ca}
+}
 \keyword{datasets}

@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 
 This package is an activity completed by [Zehui Yin](https://zehuiyin.github.io/) for the course [GEOG 712 Reproducible Research Workflow with GitHub and R](https://academiccalendars.romcmaster.ca/preview_course.php?catoid=55&coid=274877), taught by [Dr. Antonio Paez](https://experts.mcmaster.ca/display/paezha) in Fall 2024.
 
-It includes the data for the paper titled "[Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario](https://github.com/zehuiyin/grocery_store_hamilton)," which is the final project for the course.
+It contains the data for the paper titled "[Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario](https://github.com/zehuiyin/grocery_store_hamilton)," which is the final project for the course and is also hosted on GitHub.
 
 ## Installation
 

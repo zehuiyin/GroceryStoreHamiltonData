@@ -21,4 +21,7 @@ data(data_source)
 summary(data_source)
 head(data_source)
 }
+\author{
+Zehui Yin, \email{yinz39@mcmaster.ca}
+}
 \keyword{datasets}

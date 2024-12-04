@@ -13,10 +13,10 @@ R](https://academiccalendars.romcmaster.ca/preview_course.php?catoid=55&coid=274
 taught by [Dr. Antonio Paez](https://experts.mcmaster.ca/display/paezha)
 in Fall 2024.
 
-It includes the data for the paper titled “[Food Deserts or Food Oases?
+It contains the data for the paper titled “[Food Deserts or Food Oases?
 Predicting Grocery Store Locations in Hamilton,
 Ontario](https://github.com/zehuiyin/grocery_store_hamilton),” which is
-the final project for the course.
+the final project for the course and is also hosted on GitHub.
 
 ## Installation
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/prepare_data.R
 \name{prepare_data}
 \alias{prepare_data}
-\title{Prepare data for analysis}
+\title{Prepare Data for Analysis}
 \format{
 A \emph{sf} dataframe with 49 columns, the additional columns compared to the raw grocery_DA:
 \describe{

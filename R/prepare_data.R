@@ -1,4 +1,4 @@
-#' Prepare data for analysis
+#' Prepare Data for Analysis
 #'
 #' This function aggregates grocery store counts and computes additional
 #' variables based on raw census data. The function does not require any

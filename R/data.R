@@ -13,6 +13,7 @@
 #' @name data_source
 #' @docType data
 #' @keywords datasets
+#' @author Zehui Yin, \email{yinz39@mcmaster.ca}
 #' @examples
 #' data(data_source)
 #' summary(data_source)
@@ -65,6 +66,7 @@ NULL
 #' @docType data
 #' @keywords datasets
 #' @import sf
+#' @author Zehui Yin, \email{yinz39@mcmaster.ca}
 #' @examples
 #' data(grocery_DA)
 #' summary(grocery_DA[,c("GeoUID", "Freq")])
