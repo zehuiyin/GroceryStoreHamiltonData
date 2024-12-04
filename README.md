@@ -40,7 +40,7 @@ library(GroceryStoreHamiltonData)
 ```
 
 Load and plot the `grocery_CT` vector data. This dataset includes the
-geYometry of all the census tracts in Hamilton and contains a variable
+geometry of all the census tracts in Hamilton and contains a variable
 that shows the count of grocery stores in each census tract.
 
 ``` r
@@ -51,6 +51,24 @@ hist(grocery_DA$Freq,
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
+Alternatively, we can use the `prepare_data()` function to obtain a
+cleaned dataset, which I utilized in the paper “[Food Deserts or Food
+Oases? Predicting Grocery Store Locations in Hamilton,
+Ontario](https://github.com/zehuiyin/grocery_store_hamilton).”
+
+``` r
+grocery_DA <- prepare_data()
+summary(grocery_DA[,c("Freq", "PCT_single_detached")])
+#>       Freq         PCT_single_detached          geometry  
+#>  Min.   :0.00000   Min.   :  0.00      MULTIPOLYGON :891  
+#>  1st Qu.:0.00000   1st Qu.: 37.86      epsg:26917   :  0  
+#>  Median :0.00000   Median : 72.44      +proj=utm ...:  0  
+#>  Mean   :0.09877   Mean   : 63.79                         
+#>  3rd Qu.:0.00000   3rd Qu.: 93.94                         
+#>  Max.   :4.00000   Max.   :104.17                         
+#>                    NA's   :4
+```
 
 # How to cite
 
@@ -63,7 +81,7 @@ Ontario”. <https://github.com/zehuiyin/GroceryStoreHamiltonData>
   title = {GroceryStoreHamiltonData: Data for the paper "Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario"},
   author = {Zehui Yin},
   year = {2024},
-  note = {R package version 1.0},
+  note = {R package version 1.1},
   url = {https://github.com/zehuiyin/GroceryStoreHamiltonData}
 }
 ```

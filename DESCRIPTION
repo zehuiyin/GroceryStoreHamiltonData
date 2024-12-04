@@ -1,7 +1,7 @@
 Package: GroceryStoreHamiltonData
 Type: Package
 Title: Data for the paper "Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario"
-Version: 1.0
+Version: 1.1
 Authors@R: 
     person(given = "Zehui",
            family = "Yin",
